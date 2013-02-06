@@ -1,9 +1,11 @@
 package xyz.comefortest.miscellaneous.control
 
+//an enhanced "break" in scala
+
 import scala.util.control.NoStackTrace
 
-private sealed case class MyBreakControl[T]( final val r: Option[T], final val obj: Breakable[T]) extends Exception;
-private sealed case class MyNothingBreakControl( final val obj: Breakable[_]) extends Exception //with NoStackTrace;
+private final case class MyBreakControl[T]( final val r: Option[T], final val obj: Breakable[T]) extends Exception;
+private final case class MyNothingBreakControl( final val obj: Breakable[_]) extends Exception //with NoStackTrace;
 private final class OverallNothingBreakControl extends Exception;
 
 class Breakable[T] {
