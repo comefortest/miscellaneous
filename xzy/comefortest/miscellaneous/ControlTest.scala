@@ -25,7 +25,7 @@ object ControlTest extends App {
       now % 5 match {
         case 0 => Some(0l)
         case 1 => outter_x.break(Option("abc"))
-        case 2 => break
+        case 2 => break //WRONG
         case 3 => outter_y.break(Option(999))
         case _ => Some(now)
       }
